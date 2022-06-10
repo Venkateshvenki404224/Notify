@@ -5,8 +5,8 @@ day = datetime.date.today()
 Today = day.strftime("%A")
 # Find your Account SID and Auth Token at twilio.com/console
 # and set the environment variables. See http://twil.io/secure
-account_sid = 'AC7b95626d9c0425256da8a60c0397b84f'
-auth_token = 'e6178ddb6f468184f6f0e40f46632ca8'
+account_sid = 'Your SID FROM TWILLO'
+auth_token = 'YOUR AUTH-TOKEN'
 client = Client(account_sid, auth_token)
 timetable = {
     "Monday": {
@@ -52,6 +52,6 @@ Day = timetable.get(Today)
 message = client.messages.create(
                               body=f'Your Time Table for today is{Day}',
                               from_='+16205828628',
-                              to='+918073088890'
+                              to='Your Mobile Number'
                           )
 print(message.status)
